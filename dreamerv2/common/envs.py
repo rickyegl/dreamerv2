@@ -196,8 +196,8 @@ class Atari:
         'image': gym.spaces.Box(0, 255, shape, np.uint8),
         'ram': gym.spaces.Box(0, 255, (128,), np.uint8),
         'reward': gym.spaces.Box(-np.inf, np.inf, (), dtype=np.float32),
-        'is_first': gym.spaces.Box(0, 1, (), dtype=),
-        'is_last': gym.spaces.Box(0, 1, (), dtype=),
+        'is_first': gym.spaces.Box(0, 1, (), dtype=bool),
+        'is_last': gym.spaces.Box(0, 1, (), dtype=bool),
         'is_terminal': gym.spaces.Box(0, 1, (), dtype=bool),
     }
 
