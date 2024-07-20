@@ -44,7 +44,7 @@ class Config(dict):
       return cls(json.loads(filename.read_text()))
     elif filename.suffix in ('.yml', '.yaml'):
       from ruamel.yaml import YAML
-       yaml = YAML(typ='safe', pure=True)
+      yaml = YAML(typ='safe', pure=True)
       return cls(yaml.load(filename.read_text()))
     else:
       raise NotImplementedError(filename.suffix)
