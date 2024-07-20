@@ -25,7 +25,7 @@ class EnsembleRSSM(common.Module):
     self._std_act = std_act
     self._min_std = min_std
     self._cell = GRUCell(self._deter, norm=True)
-    self._cast = lambda x: tf.cast(x, .global_policy().compute_dtype)
+    self._cast = lambda x: tf.cast(x, prec.global_policy().compute_dtype)
 
   def initial(self, batch_size):
     dtype = prec.global_policy().compute_dtype
