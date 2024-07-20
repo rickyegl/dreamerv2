@@ -80,7 +80,7 @@ defaults:
 
 atari:
 
-  task: atari_pong
+  task: atari_qbert
   encoder: {mlp_keys: '$^', cnn_keys: 'image'}
   decoder: {mlp_keys: '$^', cnn_keys: 'image'}
   time_limit: 27000
