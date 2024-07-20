@@ -6,7 +6,7 @@ import pathlib
 import re
 import sys
 import warnings
-import ruamel.yaml as yaml
+from ruamel.yaml import YAML
 try:
   import rich.traceback
   rich.traceback.install()
