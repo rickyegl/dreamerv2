@@ -51,7 +51,7 @@ def main():
     tf.config.experimental.set_memory_growth(gpu, True)
   assert config.precision in (16, 32), config.precision
   if config.precision == 16:
-    from tensorflow.keras import mixed_precision
+    from tensorflow.keras import mixed_precision as prec
     prec.set_policy(prec.Policy('mixed_float16'))
 
   train_replay = common.Replay(logdir / 'train_episodes', **config.replay)
