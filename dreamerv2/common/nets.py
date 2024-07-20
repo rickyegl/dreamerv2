@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras import layers as tfkl
 from tensorflow_probability import distributions as tfd
-from tensorflow.keras import mixed_precision
+from tensorflow.keras import mixed_precision as prec
 
 import common
 
@@ -25,7 +25,7 @@ class EnsembleRSSM(common.Module):
     self._std_act = std_act
     self._min_std = min_std
     self._cell = GRUCell(self._deter, norm=True)
-    self._cast = lambda x: tf.cast(x, prec.global_policy().compute_dtype)
+    self._cast = lambda x: tf.cast(x, .global_policy().compute_dtype)
 
   def initial(self, batch_size):
     dtype = prec.global_policy().compute_dtype
